@@ -1,0 +1,3 @@
+num_embed:256
+num_hidden:512
+num_lstm_layer:2
