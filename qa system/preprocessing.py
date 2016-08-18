@@ -26,12 +26,12 @@ def PreprocessImage(path):
     return np.reshape(normed_img, (1, 3, 299, 299))
 
 # extract all image features under the given path
-def extract_all_features(path):
+def extract_all_features(path, cnn_model):
     image_names = os.listdir(path)
     image_feats = []
     # these image names order shuold correspond to the question
     for image_name in image_names:
-        feature = extract_feature(image_name)
+        feature = extract_feature(image_name, cnn_model)
         if len(feature) == 0:
             image_feats.append(None)
         else:
